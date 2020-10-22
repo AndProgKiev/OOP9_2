@@ -1,0 +1,25 @@
+import java.util.*;
+
+public class SuperCola {
+    public static void main(String[] args) {
+         Queue<String> list=new LinkedList<>();
+        list.offer("Sheldon");
+        list.offer("Leonard");
+        list.offer("Volovez");
+        list.offer("Kutrapali");
+        list.offer("Penny");
+        System.out.println(Cola.returnSuperList(list,2).toString());
+    }
+   static class Cola{
+
+    public static Queue<String> returnSuperList(Queue<String> list, int cola){
+        String s=null;
+        for (int i = 1; i <=cola ; i++) {
+           s= list.poll();
+           list.offer(s);
+           list.offer(s);
+        }
+        return list;
+    }
+    }
+}
